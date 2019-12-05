@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		EF181A3F239948EE00B003BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF181A3E239948EE00B003BE /* AppDelegate.swift */; };
 		EF181A41239948EE00B003BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF181A40239948EE00B003BE /* SceneDelegate.swift */; };
-		EF181A43239948EE00B003BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF181A42239948EE00B003BE /* ViewController.swift */; };
+		EF181A43239948EE00B003BE /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF181A42239948EE00B003BE /* TeamsViewController.swift */; };
 		EF181A46239948EE00B003BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF181A44239948EE00B003BE /* Main.storyboard */; };
 		EF181A48239948F300B003BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF181A47239948F300B003BE /* Assets.xcassets */; };
 		EF181A4B239948F300B003BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF181A49239948F300B003BE /* LaunchScreen.storyboard */; };
 		EF181A56239948F300B003BE /* TeamUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF181A55239948F300B003BE /* TeamUpTests.swift */; };
 		EF181A61239948F300B003BE /* TeamUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF181A60239948F300B003BE /* TeamUpUITests.swift */; };
+		EF181A6F23994C5000B003BE /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF181A6E23994C5000B003BE /* PlayersViewController.swift */; };
+		EF181A7123994D5000B003BE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF181A7023994D5000B003BE /* Player.swift */; };
+		EF181A732399521E00B003BE /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF181A722399521E00B003BE /* DataCenter.swift */; };
+		EF181A75239953A600B003BE /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF181A74239953A600B003BE /* PlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,7 @@
 		EF181A3B239948EE00B003BE /* TeamUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF181A3E239948EE00B003BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF181A40239948EE00B003BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EF181A42239948EE00B003BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF181A42239948EE00B003BE /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		EF181A45239948EE00B003BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF181A47239948F300B003BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF181A4A239948F300B003BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +53,10 @@
 		EF181A5C239948F300B003BE /* TeamUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeamUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF181A60239948F300B003BE /* TeamUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamUpUITests.swift; sourceTree = "<group>"; };
 		EF181A62239948F300B003BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF181A6E23994C5000B003BE /* PlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
+		EF181A7023994D5000B003BE /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		EF181A722399521E00B003BE /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
+		EF181A74239953A600B003BE /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +109,15 @@
 			children = (
 				EF181A3E239948EE00B003BE /* AppDelegate.swift */,
 				EF181A40239948EE00B003BE /* SceneDelegate.swift */,
-				EF181A42239948EE00B003BE /* ViewController.swift */,
+				EF181A42239948EE00B003BE /* TeamsViewController.swift */,
+				EF181A6E23994C5000B003BE /* PlayersViewController.swift */,
 				EF181A44239948EE00B003BE /* Main.storyboard */,
 				EF181A47239948F300B003BE /* Assets.xcassets */,
 				EF181A49239948F300B003BE /* LaunchScreen.storyboard */,
 				EF181A4C239948F300B003BE /* Info.plist */,
+				EF181A7023994D5000B003BE /* Player.swift */,
+				EF181A722399521E00B003BE /* DataCenter.swift */,
+				EF181A74239953A600B003BE /* PlayerView.swift */,
 			);
 			path = TeamUp;
 			sourceTree = "<group>";
@@ -259,8 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF181A43239948EE00B003BE /* ViewController.swift in Sources */,
+				EF181A732399521E00B003BE /* DataCenter.swift in Sources */,
+				EF181A43239948EE00B003BE /* TeamsViewController.swift in Sources */,
+				EF181A75239953A600B003BE /* PlayerView.swift in Sources */,
+				EF181A6F23994C5000B003BE /* PlayersViewController.swift in Sources */,
 				EF181A3F239948EE00B003BE /* AppDelegate.swift in Sources */,
+				EF181A7123994D5000B003BE /* Player.swift in Sources */,
 				EF181A41239948EE00B003BE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
