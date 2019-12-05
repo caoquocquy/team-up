@@ -13,8 +13,8 @@ class TeamsViewController: UIViewController {
     struct Settings {
         static let shuffleCount = 15
         static let shuffleInterval: TimeInterval = 0.3
-        static let teamLabelTextColor = UIColor.black
-        static let teamLabelFont = UIFont.boldSystemFont(ofSize: 20)
+        static let teamLabelTextColor = UIColor(red: 0.000, green: 0.479, blue: 0.999, alpha: 1.00)
+        static let teamLabelFont = UIFont.boldSystemFont(ofSize: 22)
     }
     
     var playerViews: [PlayerView] = []
@@ -44,9 +44,17 @@ class TeamsViewController: UIViewController {
     }
     
     @IBAction func shuffleAction(_ sender: Any) {
-        if let _ = timer { return }
-        
-        start()
+        startShufflingIfNeeded()
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
+    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            startShufflingIfNeeded()
+        }
     }
 }
 
@@ -111,7 +119,9 @@ extension TeamsViewController {
         randomPlayerViewCenters()
     }
     
-    func start() {
+    func startShufflingIfNeeded() {
+        if let _ = timer { return }
+        
         teamLabels.forEach { $0.removeFromSuperview() }
         teamLabels = []
         
