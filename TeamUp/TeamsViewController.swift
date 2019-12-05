@@ -24,6 +24,7 @@ class TeamsViewController: UIViewController {
 
     @IBOutlet weak var canvasView: UIView!
     @IBOutlet weak var shuffleBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var editBarButtonItem: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,7 @@ class TeamsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        stop()
+        stopShufflingAndPickPlayers()
     }
     
     @IBAction func shuffleAction(_ sender: Any) {
@@ -97,10 +98,13 @@ extension TeamsViewController {
                 teamLabels.append(label)
             }
             
-            UIView.animate(withDuration: 1.0) { [weak self] in
+            UIView.animate(withDuration: 1.0, animations: { [weak self] in
                 playerView.center = CGPoint(x: x, y: y)
                 playerView.nameLabel.alpha = 1.0
                 self?.teamLabels.forEach { $0.alpha = 1.0 }
+            }) { [weak self] _ in
+                self?.shuffleBarButtonItem.isEnabled = true
+                self?.editBarButtonItem.isEnabled = true
             }
         }
     }
@@ -122,6 +126,9 @@ extension TeamsViewController {
     func startShufflingIfNeeded() {
         if let _ = timer { return }
         
+        shuffleBarButtonItem.isEnabled = false
+        editBarButtonItem.isEnabled = false
+        
         teamLabels.forEach { $0.removeFromSuperview() }
         teamLabels = []
         
@@ -130,7 +137,7 @@ extension TeamsViewController {
         var count = 0
         timer = Timer.scheduledTimer(withTimeInterval: Settings.shuffleInterval, repeats: true) { [weak self] _ in
             if count >= Settings.shuffleCount {
-                self?.stop()
+                self?.stopShufflingAndPickPlayers()
             } else {
                 self?.randomPlayerViewCenters()
                 count += 1
@@ -138,7 +145,7 @@ extension TeamsViewController {
         }
     }
     
-    func stop() {
+    func stopShufflingAndPickPlayers() {
         timer?.invalidate()
         timer = nil
         

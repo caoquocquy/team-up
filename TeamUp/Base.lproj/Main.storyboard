@@ -43,6 +43,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="canvasView" destination="3TY-Bw-9BT" id="JSE-KZ-nlA"/>
+                        <outlet property="editBarButtonItem" destination="9BE-BB-pf0" id="5uI-QL-39I"/>
                         <outlet property="shuffleBarButtonItem" destination="wxj-Cb-dKX" id="6xb-95-KCx"/>
                     </connections>
                 </viewController>
@@ -110,7 +111,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UFv-Nx-Yhp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g5t-nn-Lse">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
