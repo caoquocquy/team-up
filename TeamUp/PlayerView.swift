@@ -63,7 +63,7 @@ extension PlayerView {
         name.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         name.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
-        name.text = player.name
+//        name.text = player.name
         
         nameLabel = name
     }

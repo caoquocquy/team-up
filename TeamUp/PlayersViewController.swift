@@ -9,6 +9,10 @@
 import UIKit
 
 class PlayersViewController: UIViewController {
+    
+    struct Settings {
+        static let tintColor = UIColor(red: 0.000, green: 0.479, blue: 0.999, alpha: 1.00)
+    }
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -34,6 +38,11 @@ extension PlayersViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell") else { return UITableViewCell() }
         let player = DataCenter.shared.players[indexPath.row]
         cell.textLabel?.text = player.name
+        cell.imageView?.image = UIImage(named: player.id)
+        cell.imageView?.clipsToBounds = true
+        cell.imageView?.layer.borderWidth = 1
+        cell.imageView?.layer.borderColor = Settings.tintColor.cgColor
+        cell.imageView?.layer.cornerRadius = PlayerView.Settings.defaultSize.height / 2
         cell.accessoryType = player.isIncluded ? .checkmark : .none
         return cell
     }
@@ -50,5 +59,9 @@ extension PlayersViewController: UITableViewDelegate {
         
         DataCenter.shared.players[indexPath.row] = updatedPlayer
         updateTitle()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return PlayerView.Settings.defaultSize.height
     }
 }

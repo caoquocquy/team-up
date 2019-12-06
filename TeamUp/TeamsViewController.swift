@@ -63,6 +63,7 @@ extension TeamsViewController {
     
     func updateTitle() {
         let count = DataCenter.shared.players.filter { $0.isIncluded }.count
+        shuffleBarButtonItem.isEnabled = count > 2
         title = "Teams (\(count) Players)"
     }
     
@@ -125,6 +126,7 @@ extension TeamsViewController {
     
     func startShufflingIfNeeded() {
         if let _ = timer { return }
+        if !shuffleBarButtonItem.isEnabled { return }
         
         shuffleBarButtonItem.isEnabled = false
         editBarButtonItem.isEnabled = false
