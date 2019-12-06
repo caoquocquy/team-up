@@ -100,7 +100,7 @@ extension TeamsViewController {
             
             UIView.animate(withDuration: 1.0, animations: { [weak self] in
                 playerView.center = CGPoint(x: x, y: y)
-                playerView.nameLabel.alpha = 1.0
+                playerView.showInfo()
                 self?.teamLabels.forEach { $0.alpha = 1.0 }
             }) { [weak self] _ in
                 self?.shuffleBarButtonItem.isEnabled = true
@@ -132,7 +132,7 @@ extension TeamsViewController {
         teamLabels.forEach { $0.removeFromSuperview() }
         teamLabels = []
         
-        playerViews.forEach { $0.nameLabel.alpha = 0.0 }
+        playerViews.forEach { $0.hideInfo() }
         
         var count = 0
         timer = Timer.scheduledTimer(withTimeInterval: Settings.shuffleInterval, repeats: true) { [weak self] _ in

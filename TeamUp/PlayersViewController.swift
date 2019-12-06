@@ -45,7 +45,7 @@ extension PlayersViewController: UITableViewDelegate {
         
         let player = DataCenter.shared.players[indexPath.row]
         
-        let updatedPlayer = Player(name: player.name, isIncluded: !player.isIncluded)
+        let updatedPlayer = Player(id: player.id, name: player.name, isIncluded: !player.isIncluded)
         cell.accessoryType = updatedPlayer.isIncluded ? .checkmark : .none
         
         DataCenter.shared.players[indexPath.row] = updatedPlayer

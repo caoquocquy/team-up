@@ -9,6 +9,8 @@
 import Foundation
 
 struct Player {
+    var id: String
     var name: String
     var isIncluded: Bool = true
+    var isSpecial: Bool = false
 }

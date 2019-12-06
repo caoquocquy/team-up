@@ -23,6 +23,6 @@ class DataCenter {
             "Phong",
             "Tuan",
             "Son"
-            ].map { Player(name: $0) }
+            ].map { Player(id: $0.lowercased(), name: $0) }
     }
 }
