@@ -12,7 +12,7 @@ class TeamsViewController: UIViewController {
     
     struct Settings {
         static let shuffleCount = 15
-        static let shuffleInterval: TimeInterval = 0.3
+        static let shuffleInterval: TimeInterval = 0.1
         static let teamLabelTextColor = UIColor(red: 0.000, green: 0.479, blue: 0.999, alpha: 1.00)
         static let teamLabelFont = UIFont.boldSystemFont(ofSize: 22)
     }

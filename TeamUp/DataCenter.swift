@@ -16,13 +16,13 @@ class DataCenter {
     init() {
         players = [
             "Tung",
-            "Hao",
+//            "Hao",
+//            "Son",
             "Quoc",
             "Quy",
             "Tinh",
             "Phong",
-            "Tuan",
-            "Son"
+            "Tuan"
             ].map { Player(id: $0.lowercased(), name: $0) }
     }
 }
