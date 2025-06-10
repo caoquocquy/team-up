@@ -20,9 +20,11 @@ class DataCenter {
 //            "Son",
             "Quoc",
             "Quy",
-            "Tinh",
+//            "Tinh",
             "Phong",
-            "Tuan"
+            "Tuan",
+            "Khuong",
+            "Thien"
             ].map { Player(id: $0.lowercased(), name: $0) }
     }
 }
